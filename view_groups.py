@@ -9,6 +9,23 @@ groups = [
             },
         ],
     },
+        {
+        "title": "SolvMate",
+        "views": [
+            {
+                "label": "Start calculations",
+                "help": "Start a SolvMate calculation.",
+                "page": "views/SolvMate_Calculation.py",
+                "icon": ":material/calculate:",
+            },
+            {
+                "label": "Get status",
+                "help": "Get status overview of all calculations",
+                "page": "views/SolvMate_Status.py",
+                "icon": ":material/fact_check:",
+            },
+        ],
+    },
     {
         "title": "Tables",
         "views": [
