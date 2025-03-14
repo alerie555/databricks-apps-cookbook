@@ -58,7 +58,7 @@ def layout():
         
         # Tabs
         dbc.Tabs([
-            dbc.Tab(label="Try it", tab_id="try-it", children=[
+            dbc.Tab(label="Start calculation", tab_id="start-calculation", children=[
                 dbc.Form([
                     dbc.Row([
                         dbc.Col([
@@ -90,61 +90,11 @@ def layout():
             ], className="p-3"),
             
             dbc.Tab(label="Code snippet", tab_id="code-snippet", children=[
-                dcc.Markdown('''```python
-import io
-from databricks.sdk import WorkspaceClient
-
-w = WorkspaceClient()
-
-# Read file into bytes
-with open("local_file.csv", "rb") as f:
-    file_bytes = f.read()
-binary_data = io.BytesIO(file_bytes)
-
-# Specify volume path and upload
-volume_path = "main.marketing.raw_files"
-parts = volume_path.strip().split(".")
-catalog = parts[0]
-schema = parts[1]
-volume_name = parts[2]
-volume_file_path = f"/Volumes/{catalog}/{schema}/{volume_name}/local_file.csv"
-w.files.upload(volume_file_path, binary_data, overwrite=True)
+                dcc.Markdown('''```Second tab...REMOVE!
 ```''',className="border rounded p-3")
             ], className="p-3"),
-            
-            dbc.Tab(label="Requirements", tab_id="requirements", children=[
-                dbc.Row([
-                    dbc.Col([
-                        html.H4("Permissions (app service principal)", className="mb-3"),
-                        html.Ul([
-                            dcc.Markdown("**```USE CATALOG```** on the catalog of the volume"),
-                            dcc.Markdown("**```USE SCHEMA```** on the schema of the volume"),
-                            dcc.Markdown("**```READ VOLUME```** and **```WRITE VOLUME```** on the volume")
-                        ], className="mb-4"),
-                        html.P([
-                            "See ",
-                            html.A("Privileges required for volume operations",
-                                  href="https://docs.databricks.com/en/volumes/privileges.html#privileges-required-for-volume-operations",
-                                  target="_blank"),
-                            " for more information."
-                        ])
-                    ]),
-                    dbc.Col([
-                        html.H4("Databricks resources", className="mb-3"),
-                        html.Ul([
-                            html.Li("Unity Catalog volume")
-                        ], className="mb-4")
-                    ]),
-                    dbc.Col([
-                        html.H4("Dependencies", className="mb-3"),
-                        html.Ul([
-                            dcc.Markdown("* [Databricks SDK](https://pypi.org/project/databricks-sdk/) - `databricks-sdk`"),
-                            dcc.Markdown("* [Dash](https://pypi.org/project/dash/) - `dash`")
-                        ], className="mb-4")
-                    ])
-                ])
-            ], className="p-3")
-        ], id="tabs", active_tab="try-it", className="mb-4")
+          
+        ], id="tabs", active_tab="start-calculation", className="mb-4")
     ], fluid=True, className="py-4")
 
 @callback(
