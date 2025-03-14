@@ -53,11 +53,11 @@ def create_sidebar():
         'Authentication': [
             'Get current user',
             'Retrieve a secret'
-        ]#,        
-        #'SolvMate': [
-        #    'Start calculation',
-        #    'Run overview'
-        #]
+        ],        
+        'SolvMate': [
+            'Start calculation',
+            'Run overview'
+        ]
     }
     
     # Define page-specific icons
