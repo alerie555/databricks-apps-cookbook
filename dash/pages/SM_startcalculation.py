@@ -10,7 +10,7 @@ import dash
 # pages/volumes_upload.py
 dash.register_page(
     __name__,
-    path='/solvmate/startcalculation',
+    path='/solvmate/start-calculation',
     title='Start calculation',
     name='Start calculation',
     category='SolvMate',
