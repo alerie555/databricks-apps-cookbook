@@ -41,7 +41,7 @@ def layout():
                                 [
                                     dbc.Label("Embed the dashboard:", className="mt-3"),
                                     dbc.Input(
-                                        id="iframe-source-input",
+                                        id="iframe-source-input_RENAME",
                                         type="text",
                                         placeholder="hhttps://dbc-f0e9b24f-3d49.cloud.databricks.com/embed/dashboardsv3/01eff8112e9411cd930f0ae0d2c6b63d?o=37581543725667790",
                                         style={
@@ -62,7 +62,7 @@ def layout():
                                     ),
                                 ]
                             ),
-                            html.Div(id="iframe-container", className="mt-4"),
+                            html.Div(id="iframe-container_RENAME", className="mt-4"),
                         ],
                         className="p-3",
                     ),
@@ -155,8 +155,8 @@ html.Iframe(
 
 
 @callback(
-    Output("iframe-container", "children"),
-    [Input("iframe-source-input", "value")],
+    Output("iframe-container_RENAME", "children"),
+    [Input("iframe-source-input_RENAME", "value")],
     prevent_initial_call=True,
 )
 def update_iframe(iframe_source):
