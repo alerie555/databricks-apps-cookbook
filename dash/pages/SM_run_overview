@@ -6,11 +6,11 @@ import dash
 # pages/embed_dashboard.py
 dash.register_page(
     __name__,
-    path="/genie/api",
-    title="Genie API",
-    name="AI/BI Dashboard",
-    category="Business Intelligence",
-    icon="material-symbols:dashboard",
+path='/solvmate/start-calculation',
+    title='Start calculation',
+    name='Start calculation',
+    category='SolvMate',
+    icon="material-symbols:fact_check",
 )
 
 
