@@ -6,9 +6,9 @@ import dash
 # pages/embed_dashboard.py
 dash.register_page(
     __name__,
-path='/solvmate/start-calculation',
-    title='Start calculation',
-    name='Start calculation',
+path='/solvmate/run-overview',
+    title='Run overview',
+    name='Run overview',
     category='SolvMate',
     icon="material-symbols:fact_check",
 )
