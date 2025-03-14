@@ -53,6 +53,10 @@ def create_sidebar():
         'Authentication': [
             'Get current user',
             'Retrieve a secret'
+        ]        
+        'SolvMate': [
+            'Start calculation',
+            'Run overview'
         ]
     }
     
@@ -70,6 +74,8 @@ def create_sidebar():
         'Connect': 'material-symbols:link',
         'Get current user': 'material-symbols:fingerprint',
         'Retrieve a secret': 'material-symbols:key'
+        'Start calculation': 'material-symbols:calculate',
+        'Run overview': 'material-symbols:fact_check'
     }
     
     # Group pages by category
