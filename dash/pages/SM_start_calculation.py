@@ -62,8 +62,8 @@ def layout():
                         size="md"
                     )
                 ], className="mt-3"),
-                html.Div(id="download-area", className="mt-3"),
-                html.Div(id="status-area-download", className="mt-3")
+                html.Div(id="download-area_RENAME", className="mt-3"),
+                html.Div(id="status-area-download_RENAME", className="mt-3")
             ], className="p-3"),
             
             dbc.Tab(label="Code snippet", tab_id="code-snippet", children=[
@@ -115,8 +115,8 @@ file_name = os.path.basename(download_file_path)
     ], fluid=True, className="py-4")
 
 @callback(
-    [Output("download-area", "children"),
-     Output("status-area-download", "children")],
+    [Output("download-area_RENAME", "children"),
+     Output("status-area-download_RENAME", "children")],
     Input("get-file-button", "n_clicks"),
     State("file-path-input", "value"),
     prevent_initial_call=True
