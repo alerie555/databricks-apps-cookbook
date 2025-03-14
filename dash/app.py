@@ -73,7 +73,7 @@ def create_sidebar():
         'Retrieve job results': 'material-symbols:list-alt',
         'Connect': 'material-symbols:link',
         'Get current user': 'material-symbols:fingerprint',
-        'Retrieve a secret': 'material-symbols:key'
+        'Retrieve a secret': 'material-symbols:key',
         'Start calculation': 'material-symbols:calculate',
         'Run overview': 'material-symbols:fact_check'
     }
