@@ -39,7 +39,7 @@ def layout():
                 dbc.Form([
                     dbc.Row([
                         dbc.Col([
-                            dbc.Label("Specify a path to a file in a Unity Catalog volume:", 
+                            dbc.Label("Specify a path to an input file of version v30 or later:", 
                                     className="fw-bold mb-2"),
                             dbc.Input(
                                 id="file-path-input",
@@ -50,8 +50,8 @@ def layout():
                         ], width=12)
                     ]),
                     dbc.Button(
-                        "Get file",
-                        id="get-file-button",
+                        "Start calculation",
+                        id="start-calculation-button",
                         color="primary",
                         className="mb-4",
                         size="md"
@@ -112,7 +112,7 @@ file_name = os.path.basename(download_file_path)
 @callback(
     [Output("download-area_RENAME", "children"),
      Output("status-area-download_RENAME", "children")],
-    Input("get-file-button", "n_clicks"),
+    Input("start-calculation-button", "n_clicks"),
     State("file-path-input", "value"),
     prevent_initial_call=True
 )
