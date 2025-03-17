@@ -35,7 +35,7 @@ def layout():
         
         # Tabs
         dbc.Tabs([
-            dbc.Tab(label="Try it", tab_id="try-it", children=[
+            dbc.Tab(label="Start calculation", tab_id="start-calculation", children=[
                 dbc.Form([
                     dbc.Row([
                         dbc.Col([
@@ -43,14 +43,9 @@ def layout():
                                     className="fw-bold mb-2"),
                             dbc.Input(
                                 id="file-path-input",
-                                type="text",
-                                placeholder="/Volumes/main/marketing/raw_files/leads.csv",
+                                type="file",
+                                placeholder="Select input file of version v30 or later...",
                                 className="mb-3",
-                                style={
-                                    "backgroundColor": "#f8f9fa",
-                                    "border": "1px solid #dee2e6",
-                                    "boxShadow": "inset 0 1px 2px rgba(0,0,0,0.075)"
-                                }
                             )
                         ], width=12)
                     ]),
