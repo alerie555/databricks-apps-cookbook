@@ -23,12 +23,12 @@ def layout():
     """Return the layout for this view"""
     return dbc.Container([
         # Header section
-        html.H1("Volumes", className="my-4"),
-        html.H2("Download a file", className="mb-3"),
+        html.H1("SolvMate", className="my-4"),
+        html.H2("Start calculation", className="mb-3"),
         html.P([
-            "This recipe downloads a file from a ",
-            html.A("Unity Catalog volume", 
-                  href="https://docs.databricks.com/en/volumes/index.html",
+            "This is a PoC for the replacement of the ",
+            html.A("SAS Portal", 
+                  href="https://stratum.sas94.services.ergo/SASPortal/main.do",
                   target="_blank",
                   className="text-primary")
         ], className="mb-4"),
@@ -61,52 +61,16 @@ def layout():
                 html.Div(id="status-area-download_RENAME", className="mt-3")
             ], className="p-3"),
             
-            dbc.Tab(label="Code snippet", tab_id="code-snippet", children=[
+            dbc.Tab(label="Status overview", tab_id="code-snippet", children=[
                 dcc.Markdown('''```python
-from databricks.sdk import WorkspaceClient
 
-w = WorkspaceClient()
+...
 
-download_file_path = "/Volumes/catalog/schema/volume_name/file.csv"
-response = w.files.download(download_file_path)
-file_data = response.contents.read()
-file_name = os.path.basename(download_file_path)
 ```''',className="border rounded p-3")
             ], className="p-3"),
             
-            dbc.Tab(label="Requirements", tab_id="requirements", children=[
-                dbc.Row([
-                    dbc.Col([
-                        html.H4("Permissions (app service principal)", className="mb-3"),
-                        html.Ul([
-                            dcc.Markdown("**```USE CATALOG```** on the volume's catalog"),
-                            dcc.Markdown("**```USE SCHEMA```** on the volume's schema"),
-                            dcc.Markdown("**```READ VOLUME```** on the volume")
-                        ], className="mb-4"),
-                        html.P([
-                            "See ",
-                            html.A("Privileges required for volume operations",
-                                  href="https://docs.databricks.com/en/volumes/privileges.html#privileges-required-for-volume-operations",
-                                  target="_blank"),
-                            " for more information."
-                        ])
-                    ]),
-                    dbc.Col([
-                        html.H4("Databricks resources", className="mb-3"),
-                        html.Ul([
-                            html.Li("Unity Catalog volume")
-                        ], className="mb-4")
-                    ]),
-                    dbc.Col([
-                        html.H4("Dependencies", className="mb-3"),
-                        html.Ul([
-                            dcc.Markdown("* [Databricks SDK](https://pypi.org/project/databricks-sdk/) - `databricks-sdk`"),
-                            dcc.Markdown("* [Dash](https://pypi.org/project/dash/) - `dash`")
-                        ], className="mb-4")
-                    ])
-                ])
-            ], className="p-3")
-        ], id="tabs", active_tab="try-it", className="mb-4")
+            
+        ], id="tabs", active_tab="start-calculation", className="mb-4")
     ], fluid=True, className="py-4")
 
 @callback(
@@ -130,7 +94,7 @@ def handle_file_download(n_clicks, file_path):
         
         download_link = html.A(
             dbc.Button(
-                "Download file",
+                "Start calculation",
                 color="success",
                 className="mt-3"
             ),
